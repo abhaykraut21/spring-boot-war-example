@@ -22,7 +22,7 @@ pipeline{
         stage("Deply on test"){
             steps{
 
-                deploy adapters: [tomcat9(credentialsId: 'testtom', path: 'app_abhay', url: 'http://192.168.122.36:8080/')], contextPath: 'app_abhay', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'testtom', path: '', url: 'http://192.168.122.36:8080/app_abhay')], contextPath: 'app_abhay', war: '**/*.war'
             }
             
         }
@@ -32,7 +32,7 @@ pipeline{
             }
             steps{
 
-                deploy adapters: [tomcat9(credentialsId: 'prodtom', path: 'app_abhay', url: 'http://192.168.122.35:8080/')], contextPath: 'app_abhay', war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: 'prodtom', path: '', url: 'http://192.168.122.35:8080/app_abhay')], contextPath: 'app_abhay', war: '**/*.war'
             }
             
         }
